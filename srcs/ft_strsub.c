@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmofoken <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/24 14:17:01 by gmofoken          #+#    #+#             */
-/*   Updated: 2016/07/24 14:17:09 by gmofoken         ###   ########.fr       */
+/*   Created: 2016/07/28 13:10:46 by gmofoken          #+#    #+#             */
+/*   Updated: 2016/07/28 13:49:00 by gmofoken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	
+	int		i;
+	char	*str;
+
 	i = 0;
-	while (s[i])
+	//str = (char *)malloc(sizeof(char) * len);
+	str = ft_memalloc(sizeof(char) * len);
+	while (s[start] && i <= len)
 	{
-		ft_putchar_fd(s[i], fd);
+		str[i] = s[start];
 		i++;
+		start++;
 	}
+	str[i] = '\0';
+	if (str == NULL)
+		return (NULL);
+	return (str);
 }

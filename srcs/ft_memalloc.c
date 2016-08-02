@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmofoken <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/24 14:17:01 by gmofoken          #+#    #+#             */
-/*   Updated: 2016/07/24 14:17:09 by gmofoken         ###   ########.fr       */
+/*   Created: 2016/07/25 16:05:31 by gmofoken          #+#    #+#             */
+/*   Updated: 2016/07/25 16:45:00 by gmofoken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	*ft_memalloc(size_t size)
 {
-	int	i;
-	
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	void	*mem;
+
+	mem = malloc(sizeof(mem) * size);
+	if (mem == NULL)
+		return (NULL);
+	return (ft_memset(mem, 0, size));
 }
