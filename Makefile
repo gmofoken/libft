@@ -1,37 +1,37 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gmofoken <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/07/09 18:03:57 by gmofoken          #+#    #+#              #
+#    Updated: 2016/08/19 08:50:51 by gmofoken         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = libft.a
+NAME = minishell
 
-FILES = ft_putchar.c ft_putnbr.c ft_putstr.c ft_putnbr_fd.c ft_putstr_fd.c \
-	ft_strlen.c ft_putendl.c ft_putendl_fd.c ft_strclr.c ft_memset.c \
-	ft_bzero.c ft_memalloc.c ft_toupper.c ft_tolower.c ft_isalpha.c \
-	ft_isdigit.c ft_isalnum.c ft_isprint.c ft_isascii.c ft_strequ.c ft_itoa.c \
-	ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strnew.c ft_strtrim.c ft_strrev.c \
+SOURCES = srcs/exe.c srcs/ft_path_finder.c srcs/get_line.c srcs/l_shell.c \
+          srcs/main.c srcs/env_module.c srcs/ft_set_env.c srcs/ft_cd.c \
+		  srcs/ft_echo.c srcs/ft_ex_cons.c srcs/ft_putecho.c
 
-SRC   = srcs/ft_putchar.c srcs/ft_putnbr.c srcs/ft_putstr.c \
-	srcs/ft_putnbr_fd.c srcs/ft_putstr_fd.c	srcs/ft_strlen.c \
-	srcs/ft_putendl.c srcs/ft_putendl_fd.c srcs/ft_strclr.c srcs/ft_strrev.c \
-	srcs/ft_memset.c srcs/ft_bzero.c srcs/ft_memalloc.c srcs/ft_toupper.c \
-	srcs/ft_tolower.c srcs/ft_isalpha.c srcs/ft_isdigit.c srcs/ft_itoa.c \
-	srcs/ft_isalnum.c srcs/ft_isprint.c srcs/ft_isascii.c srcs/ft_strequ.c \
-	srcs/ft_strnequ.c srcs/ft_strsub.c srcs/ft_strjoin.c srcs/ft_strnew.c \
-	srcs/ft_strtrim.c
+HEADER = -I include
 
-INCLUDES = -I includes
+LFLAGS = -L./libft/ -lft
 
-SRCO = $(FILES:.c=.o)
+FLAGS = -o minishell -Wall -Werror -Wextra
 
-all: $(NAME)
-
-$(NAME):
-	gcc -c $(CFLAGS) $(SRC) $(INCLUDES)
-	ar rc $(NAME) $(SRCO)
-	ranlib $(NAME)
-	rm $(SRCO)
+all:
+	@make -C libft/
+	@gcc $(FLAGS) $(SOURCES) $(HEADER) $(LFLAGS)
 
 clean:
-	rm -f $(SRCO)
+	@rm $(NAME)
+	@make -C libft/ clean
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -rf $(NAME)
+	@rm -rf libft/libft.a
 
 re: fclean all
