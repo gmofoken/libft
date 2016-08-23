@@ -6,7 +6,7 @@
 /*   By: gmofoken <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/01 12:12:07 by gmofoken          #+#    #+#             */
-/*   Updated: 2016/08/12 20:43:09 by gmofoken         ###   ########.fr       */
+/*   Updated: 2016/08/23 10:09:13 by gmofoken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ char		*ft_strnstr(const char *big, const char *little, size_t len);
 size_t		ft_strlcat(char *dst, const char *src,size_t size);
 char		**ft_strsplit(char const *s, char c);
 char		*ft_epur_str(const char *s);
+char		*ft_itoa_base(int value, int base);
 
 #endif

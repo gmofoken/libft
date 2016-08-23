@@ -10,7 +10,7 @@ FILES = ft_putchar.c ft_putnbr.c ft_putstr.c ft_putnbr_fd.c ft_putstr_fd.c \
 	ft_strrchr.c ft_strstr.c ft_strcmp.c ft_strncmp.c ft_strcat.c ft_strmapi.c \
 	ft_strdup.c ft_strncat.c ft_striteri.c ft_memdel.c ft_strsplit.c \
 	ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memcmp.c ft_memchr.c ft_strlcat.c \
-	ft_putchar_fd.c ft_strnstr.c ft_epur_str.c
+	ft_putchar_fd.c ft_strnstr.c ft_epur_str.c ft_itoa_base.c
 
 SRC   = srcs/ft_putchar.c srcs/ft_putnbr.c srcs/ft_putstr.c srcs/ft_strdel.c \
 	srcs/ft_putnbr_fd.c srcs/ft_putstr_fd.c	srcs/ft_strlen.c srcs/ft_strncat.c \
@@ -25,7 +25,7 @@ SRC   = srcs/ft_putchar.c srcs/ft_putnbr.c srcs/ft_putstr.c srcs/ft_strdel.c \
 	srcs/ft_strmap.c srcs/ft_strmapi.c srcs/ft_memdel.c srcs/ft_atoi.c \
 	srcs/ft_strsplit.c srcs/ft_memcpy.c srcs/ft_memccpy.c srcs/ft_memmove.c \
 	srcs/ft_memcmp.c srcs/ft_memchr.c srcs/ft_strlcat.c srcs/ft_putchar_fd.c \
-	srcs/ft_strnstr.c srcs/ft_epur_str.c
+	srcs/ft_strnstr.c srcs/ft_epur_str.c srcs/ft_itoa_base.c
 
 INCLUDES = -I includes
 
