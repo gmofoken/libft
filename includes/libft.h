@@ -6,7 +6,7 @@
 /*   By: gmofoken <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/01 12:12:07 by gmofoken          #+#    #+#             */
-/*   Updated: 2016/08/23 10:09:13 by gmofoken         ###   ########.fr       */
+/*   Updated: 2016/08/23 17:14:08 by gmofoken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		*ft_memset(void *s, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memalloc(size_t size);
 char		ft_toupper(char c);
-char		ft_tolower(char c);
+int			ft_tolower(int c);
 int			ft_isalpha(char c);
 int			ft_isdigit(char c);
 int			ft_isalnum(char c);
@@ -57,7 +57,8 @@ char		*ft_strcat(char *dest, const char *src);
 char		*ft_strdup(char const *s);
 char		*ft_strncat(char *restrict s1, char *restrict s2, size_t n);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
-char		*ft_strmap(char const *s, void (*f)(char));
+char		*ft_strmap(char const *s, char (*f)(char));
+char		*ft_strmap_i(char const *s, int (*f)(int));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_memdel(void **ap);
 int			ft_atoi(const char *str);
@@ -72,5 +73,6 @@ size_t		ft_strlcat(char *dst, const char *src,size_t size);
 char		**ft_strsplit(char const *s, char c);
 char		*ft_epur_str(const char *s);
 char		*ft_itoa_base(int value, int base);
+
 
 #endif

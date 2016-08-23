@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strmap_i.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmofoken <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 15:33:58 by gmofoken          #+#    #+#             */
-/*   Updated: 2016/08/23 17:13:25 by gmofoken         ###   ########.fr       */
+/*   Created: 2016/08/23 12:27:00 by gmofoken          #+#    #+#             */
+/*   Updated: 2016/08/23 17:02:29 by gmofoken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap_i(char const *s, int (*f)(int))
 {
-	char		*str;
-	int			i;
+	char	*new;
+	int		i;
 
-	str = ft_strnew(ft_strlen(s));
-	if (str == NULL)
-		return (NULL);
 	i = 0;
-	while (s[i])
+	new = ft_strnew(ft_strlen(s));
+	if (new == NULL)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		str[i] = f(s[i]);
+		new[i] = f(s[i]);
 		i++;
 	}
-	return (str);
+	return (new);
 }
