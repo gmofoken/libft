@@ -12,8 +12,9 @@
 
 #include "libft.h"
 
-char	ft_toupper(char c)
+char	ft_toupper(int c)
 {
-	c = c - 32;
+	if (ft_isalpha(c) == 1 && ft_isalpha(c -32) == 1)	
+		return (c - 32);
 	return (c);
 }
